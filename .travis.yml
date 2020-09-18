@@ -7,3 +7,10 @@ before_install:
 
 scripts:
   - docker run izhal/docker-react npm run coverage
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  app: docker-reactjs
+  on:
+    branch: master
