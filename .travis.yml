@@ -14,6 +14,7 @@ before_install:
 
 scripts:
   - docker run izhal/docker-react npm run coverage
+  - npm install -g gh-pages
   - npm run deploy
 
 deploy:
