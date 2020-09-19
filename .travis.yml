@@ -4,20 +4,22 @@ node_js:
 sudo: required
 services:
   - docker
+cache:
+  directories:
+    - public
+    - .cache
 
 before_install:
   - docker build -t izhal/docker-react -f Dockerfile.dev .
 
 scripts:
   - docker run izhal/docker-react npm run coverage
-
-before_deploy:
-  - docker run izhal/docker-react npm run build
+  - npm run build
 
 deploy:
   provider: pages
   repo: 'izhal27/pages-2'
-  local_dir: '$TRAVIS_BUILD_DIR/build'
+  local_dir: public
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
