@@ -6,7 +6,7 @@ services:
   - docker
 cache:
   directories:
-    - public
+    - build
     - .cache
 
 before_install:
@@ -19,7 +19,7 @@ scripts:
 deploy:
   provider: pages
   repo: 'izhal27/pages-2'
-  local_dir: public
+  local_dir: build
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
