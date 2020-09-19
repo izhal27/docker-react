@@ -4,10 +4,10 @@ node_js:
 sudo: required
 services:
   - docker
-# cache:
-#   directories:
-#     - build
-#     - .cache
+cache:
+  directories:
+    - build
+    - .cache
 
 before_install:
   - docker build -t izhal/docker-react -f Dockerfile.dev .
@@ -18,7 +18,7 @@ scripts:
 deploy:
   provider: pages
   repo: 'izhal27/pages-2'
-  # local_dir: build
+  local_dir: build
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
