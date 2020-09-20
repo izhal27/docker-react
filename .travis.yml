@@ -4,10 +4,10 @@ node_js:
 sudo: required
 services:
   - docker
-cache:
-  directories:
-    - build
-    # - .cache
+# cache:
+#   directories:
+#     - build
+# - .cache
 
 before_install:
   - docker build -t izhal/docker-react -f Dockerfile.dev .
