@@ -15,9 +15,6 @@ before_install:
 scripts:
   - docker run izhal/docker-react npm run coverage
 
-before_deploy:
-  - npm run build
-
 deploy:
   provider: pages
   repo: 'izhal27/pages-2'
