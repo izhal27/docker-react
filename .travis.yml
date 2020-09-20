@@ -7,7 +7,7 @@ services:
 cache:
   directories:
     - build
-    - .cache
+    # - .cache
 
 before_install:
   - docker build -t izhal/docker-react -f Dockerfile.dev .
